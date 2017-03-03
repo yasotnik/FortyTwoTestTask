@@ -1,9 +1,10 @@
 from django.test import TestCase
+from django.urls import reverse
 
-# Create your tests here.
 
+class ShowBioTest(TestCase):
 
-class SomeTests(TestCase):
-    def test_math(self):
-        "put docstrings in your tests"
-        assert(2 + 2 == 4)
+    def test_index_bio_template(self):
+        response = self.client.get(reverse('hello:index_bio'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'templates/index.html')
