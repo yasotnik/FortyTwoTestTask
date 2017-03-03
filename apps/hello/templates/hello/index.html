@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "hello/base.html" %}
+{% block content %}
+<div class="container text-center">
+    <div class="jumbotron">
+        <h2>42 coffe cups test</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">Name: yourname</div>
+        <div class="col-lg-6">Email: email</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">Surname: surname</div>
+        <div class="col-lg-6">JID: jid</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">Date of birth: yourname</div>
+        <div class="col-lg-6">Skype: skype</div>
+    </div>
+</div>
+{% endblock content %}
