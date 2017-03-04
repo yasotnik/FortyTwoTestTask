@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
+from .models import Bio
 
 
 class ShowBioTest(TestCase):
@@ -20,7 +21,7 @@ class ShowBioTest(TestCase):
 
 class BioModelTest(TestCase):
 
-    def create_model_data(self, name='name', surname='surname', email='email@mail.com', jid='jid@42cc.co', skype='skype', dateofbirth='01.02.03'):
+    def create_model_data(self, name='name', surname='surname', email='email@mail.com', jid='jid@42cc.co', skype='skype', dateofbirth='2000-02-03'):
         return Bio.objects.create(name=name, surname=surname, email=email, jid=jid, skype=skype, dateofbirth=dateofbirth)
 
     def test_bio_creation(self):
