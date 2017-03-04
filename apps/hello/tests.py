@@ -16,3 +16,13 @@ class ShowBioTest(TestCase):
         self.assertContains(response, 'Surname')
         self.assertContains(response, 'JID')
         self.assertContains(response, 'Skype')
+
+
+class BioModelTest(TestCase):
+
+    def create_model_data(self, name='name', surname='surname', email='email@mail.com', jid='jid@42cc.co', skype='skype', dateofbirth='01.02.03'):
+        return Bio.objects.create(name=name, surname=surname, email=email, jid=jid, skype=skype, dateofbirth=dateofbirth)
+
+    def test_bio_creation(self):
+        bio = self.create_model_data()
+        self.assertTrue(isinstance(bio, Bio))
