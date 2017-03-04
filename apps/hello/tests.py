@@ -10,6 +10,15 @@ class ShowBioTest(TestCase):
 
     """
 
+    def setUp(self):
+        """
+        Creating a data in DB for template
+        """
+        self.bio = Bio.objects.create(name='name', surname='surname',
+                                      email='email@mail.com',
+                                      jid='jid@42cc.co',
+                                      skype='skype', dateofbirth='2000-02-03')
+
     def test_index_bio_template(self):
         """Testing usage of the needed templates.
 
@@ -65,3 +74,26 @@ class BioModelTest(TestCase):
         """
         bio = self.create_model_data()
         self.assertTrue(isinstance(bio, Bio))
+
+
+class BioModelDataInTemplateTest(TestCase):
+
+    def setUp(self):
+        """
+        Creating a data in DB for template
+        """
+        self.bio = Bio.objects.create(name='name', surname='surname',
+                                      email='email@mail.com',
+                                      jid='jid@42cc.co',
+                                      skype='skype', dateofbirth='2000-02-03')
+
+    def test_model_data_in_template(self):
+        """Testing if data from db is in template.
+
+        Comparison of object with
+        the response of rendering the template.
+
+        """
+        response = self.client.get(reverse('index_bio'))
+        self.assertContains(response, 'Name: ' + self.bio.name)
+        self.assertContains(response, 'Surname: ' + self.bio.surname)
