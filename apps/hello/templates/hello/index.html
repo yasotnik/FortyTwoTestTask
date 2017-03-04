@@ -5,16 +5,16 @@
         <h2>42 coffe cups test</h2>
     </div>
     <div class="row">
-        <div class="col-lg-6">Name: yourname</div>
-        <div class="col-lg-6">Email: email</div>
+        <div class="col-lg-6">Name: {{ bio.name }}</div>
+        <div class="col-lg-6">Email: {{ bio.email }}</div>
     </div>
     <div class="row">
-        <div class="col-lg-6">Surname: surname</div>
-        <div class="col-lg-6">JID: jid</div>
+        <div class="col-lg-6">Surname: {{ bio.surname }}</div>
+        <div class="col-lg-6">JID: {{ bio.jid }}</div>
     </div>
     <div class="row">
-        <div class="col-lg-6">Date of birth: yourname</div>
-        <div class="col-lg-6">Skype: skype</div>
+        <div class="col-lg-6">Date of birth: {{ bio.dateofbirth }}e</div>
+        <div class="col-lg-6">Skype: {{ bio.skype }}</div>
     </div>
 </div>
 {% endblock content %}

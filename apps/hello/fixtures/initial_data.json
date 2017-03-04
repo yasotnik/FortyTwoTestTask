@@ -1,0 +1,13 @@
+[
+  {
+    "model": "hello.Bio",
+    "pk": 1,
+    "fields": {
+      "name": "John",
+      "surname": "Lennon",
+      "email": "vwjuke@music.er",
+      "skype": "iloverocknroll",
+      "dateofbirth": "1940-10-09"
+    }
+  }
+]

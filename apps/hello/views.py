@@ -1,5 +1,6 @@
 from django.views.generic import View
 from django.shortcuts import render
+from .models import Bio
 
 
 class ShowBioView(View):
@@ -7,4 +8,5 @@ class ShowBioView(View):
     template_name = 'hello/index.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        bio = Bio.objects.get(pk=1)
+        return render(request, self.template_name, {'bio': bio})
