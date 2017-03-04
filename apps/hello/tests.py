@@ -6,7 +6,7 @@ from .models import Bio
 class ShowBioTest(TestCase):
     """Testing the show bio template
 
-    Testing the hardcoded data for template
+    Getting a data in DB for template
 
     """
 
@@ -14,10 +14,7 @@ class ShowBioTest(TestCase):
         """
         Creating a data in DB for template
         """
-        self.bio = Bio.objects.create(name='name', surname='surname',
-                                      email='email@mail.com',
-                                      jid='jid@42cc.co',
-                                      skype='skype', dateofbirth='2000-02-03')
+        self.bio = Bio.objects.get(pk=1)
 
     def test_index_bio_template(self):
         """Testing usage of the needed templates.
@@ -80,12 +77,9 @@ class BioModelDataInTemplateTest(TestCase):
 
     def setUp(self):
         """
-        Creating a data in DB for template
+        Getting a data in DB for template
         """
-        self.bio = Bio.objects.create(name='name', surname='surname',
-                                      email='email@mail.com',
-                                      jid='jid@42cc.co',
-                                      skype='skype', dateofbirth='2000-02-03')
+        self.bio = Bio.objects.get(pk=1)
 
     def test_model_data_in_template(self):
         """Testing if data from db is in template.
