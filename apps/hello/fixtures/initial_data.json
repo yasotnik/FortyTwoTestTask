@@ -1,0 +1,24 @@
+[
+  {
+    "model": "hello.Bio",
+    "pk": 1,
+    "fields": {
+      "name": "John",
+      "surname": "Lennon",
+      "email": "vwjuke@music.er",
+      "jid": "jhon@jid.gb",
+      "skype": "iloverocknroll",
+      "dateofbirth": "1940-10-09"
+    }
+  },
+  { "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$12000$O4jF6gcVwJc5$R3Rl2/8VWNu1kUIef3aMqYxHsp1UXufW1g/ONGNDEy0=",
+      "is_superuser": true,
+      "is_staff": true,
+      "is_active": true
+    }
+  }
+]
